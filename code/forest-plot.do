@@ -2,8 +2,10 @@
 *** All-cause graft failure
 ********************************************************************************************
 // Read in data
-import excel "C:\Users\sriley2\OneDrive - University of Plymouth\Github\systematic-review\R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
+*import excel "C:\Users\sriley2\OneDrive - University of Plymouth\Github\systematic-review\R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
 
+import excel "data\data-extraction-rob-analysis.xlsx", sheet("DataExtrac") firstrow clear
+save "data\data.dta", replace
 // Format variables
 destring, replace
 
@@ -24,7 +26,7 @@ meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Model_type) 
 ********************************************************************************************
 ***All-cause mortality
 ********************************************************************************************
-import excel "C:\Users\sriley2\OneDrive - University of Plymouth\Github\systematic-review\R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
+use "data\data.dta", clear
 
 destring, replace
 
@@ -41,7 +43,7 @@ meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Model_type) 
 ********************************************************************************************
 ***Death-censored graft failure
 ********************************************************************************************
-import excel "C:\Users\sriley2\OneDrive - University of Plymouth\Github\systematic-review\R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
+use "data\data.dta", clear
 
 destring, replace
 
