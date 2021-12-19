@@ -1,4 +1,4 @@
-### Risk of bias
+### Plot for risk of bias
 
 #Libraries
 library(readxl)
