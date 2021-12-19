@@ -1,2 +1,3 @@
 # methods-review-kidney-transplant-prediction
-methodological review of prediction models for kidney transplant outcomes
+Stephanie Riley's PhD Project
+Report 1: methodological review of prediction models for kidney transplant outcomes
