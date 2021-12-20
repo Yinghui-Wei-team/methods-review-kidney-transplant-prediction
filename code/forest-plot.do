@@ -2,7 +2,6 @@
 *** All-cause graft failure
 ********************************************************************************************
 // Read in data
-*import excel "C:\Users\sriley2\OneDrive - University of Plymouth\Github\systematic-review\R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
 
 import excel "data\data-extraction-rob-analysis.xlsx", sheet("DataExtrac") firstrow clear
 save "data\data.dta", replace
