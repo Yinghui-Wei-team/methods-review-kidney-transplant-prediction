@@ -3,7 +3,7 @@
 ********************************************************************************************
 // Read in data
 
-import excel "data\data-extraction-rob-analysis.xlsx", sheet("DataExtrac") firstrow clear
+import excel "R_data_RoB.xlsx", sheet("DataExtrac") firstrow clear
 save "data\data.dta", replace
 
 use "data\data.dta", clear

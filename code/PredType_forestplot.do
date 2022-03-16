@@ -11,8 +11,9 @@ destring, replace
 replace upperci = upperci + 0.0001 if upperci == est
 replace lowerci = lowerci - 0.0001 if lowerci==est
 
-drop if (Outcome != "All-cause graft failure") | (Model_type != "Development and validation")
+drop if (Outcome != "All-cause graft failure")
 replace Model_type = "D&V" if Model_type == "Development and validation"
+replace Model_type = "V" if Model_type != "Development and validation"
 replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 
 // Declare as meta analysis data
@@ -32,7 +33,7 @@ destring, replace
 replace upperci = upperci + 0.0001 if upperci == est
 replace lowerci = lowerci - 0.0001 if lowerci==est
 
-drop if (Outcome != "All-cause mortality") | (Model_type != "Development and validation")
+drop if (Outcome != "All-cause mortality")
 replace Model_type = "D&V" if Model_type == "Development and validation"
 replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 
@@ -50,7 +51,7 @@ destring, replace
 replace upperci = upperci + 0.0001 if upperci == est
 replace lowerci = lowerci - 0.0001 if lowerci==est
 
-drop if Outcome != "Death-censored graft failure" | (Model_type != "Development and validation")
+drop if Outcome != "Death-censored graft failure" 
 replace Model_type = "D&V" if Model_type == "Development and validation"
 replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 
