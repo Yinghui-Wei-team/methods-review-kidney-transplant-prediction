@@ -29,15 +29,15 @@ summary<- summary %>%
   mutate(Used_sample_size_k = Used_sample_size / 1000)
 
 #Scatter plot of discrimination against sample size
-ggsave("disc-by-sampsize.tiff", width = 180, height = 105, units = "mm",
+ggsave("disc-by-sampsize.tiff", width = 180, height = 210, units = "mm",
        plot=summary %>%
          ggplot(aes(x = Used_sample_size_k, y = as.numeric(est))) +
-         geom_point(aes(shape = as.factor(measure)), size = 1.5) +
-         facet_wrap(~ Outcome, scales = "free_x") +
+         geom_point(aes(shape = as.factor(measure))) +
+         facet_wrap(~ Outcome, scales = "free_x", ncol = 1) +
          scale_x_continuous(breaks = breaks_fun, limits = c(0,NA)) +
          scale_y_continuous(breaks = seq(0.4, 1.0, by = 0.05), limits = c(0.4,0.9)) +
          scale_shape_manual(labels = c("AUC", "C-statistic", "Harrell's C", "Optimism-corrected C-statistic", "Time-dependent AUC"), values = c(0, 1, 2, 15, 16))  +
-         labs(x = "Sample size (x10^3)", y = "Discrimination metric", shape = "Measure of discrimination") +
+         labs(x = "Sample size (in thousands)", y = "Discrimination metric", shape = "Measure of discrimination") +
          theme_bw() +
          theme(legend.position = "bottom", legend.direction = "vertical",
                axis.text = element_text(size=8)) +
