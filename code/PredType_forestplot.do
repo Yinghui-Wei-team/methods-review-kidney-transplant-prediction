@@ -2,7 +2,7 @@
 *** All-cause graft failure
 ********************************************************************************************
 // Read in data
-use "data\data.dta", clear
+use "data/dataextraction.dta", clear
 
 // Format variables
 destring, replace
@@ -20,13 +20,13 @@ replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 meta set est lowerci upperci, studylabel(Author Year) eslabel("Discrimination") studysize(Used_sample_size) civartolerance(1e-1)
 
 *Forest plot
-meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85)
+meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.4 0.5  0.6 0.7 0.8 0.9 1.0) markeropts(msize("medsmall"))
 
 
 ********************************************************************************************
 ***All-cause mortality
 ********************************************************************************************
-use "data\data.dta", clear
+use "data/dataextraction.dta", clear
 
 destring, replace
 
@@ -39,12 +39,13 @@ replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 
 meta set est lowerci upperci, studylabel(Author Year) eslabel("Discrimination") studysize(Used_sample_size) civartolerance(1e-2)
 
-meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85)
+meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.4 0.5  0.6 0.7 0.8 0.9 1.0) markeropts(msize("medsmall"))
+
 
 ********************************************************************************************
 ***Death-censored graft failure
 ********************************************************************************************
-use "data\data.dta", clear
+use "data/dataextraction.dta", clear
 
 destring, replace
 
@@ -58,4 +59,4 @@ replace measure = "T-D AUC" if measure == "Time-dependent AUC"
 meta set est lowerci upperci, studylabel(Author Year) eslabel("Discrimination") studysize(Used_sample_size) civartolerance(1e-2)
 
 *Forest plot
-meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85)
+meta forestplot _id ModelNo measure _plot _esci, nooverall subgroup(Pred_type) nohrule noohet noohom noghet nogwhom nogbhom noomarker nonotes nogmarker columnopts(ModelNo, title("Model" "number")) columnopts(measure, title("Discrimination" "measure")) xlabel(0.4 0.5  0.6 0.7 0.8 0.9 1.0) markeropts(msize("medsmall"))
