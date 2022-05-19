@@ -2,7 +2,7 @@
 *** All-cause graft failure
 ********************************************************************************************
 // Read in data
-import excel "data/RoB_DataExtraction.xlsx", sheet("DataExtrac1") firstrow clear
+import excel "data/RoB_DataExtraction.xlsx", sheet("DataExtrac") firstrow clear
 save "data/dataextraction.dta", replace
 
 use "data/dataextraction.dta", clear
